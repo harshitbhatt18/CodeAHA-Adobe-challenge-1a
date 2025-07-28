@@ -23,6 +23,7 @@ The system generates corresponding JSON files in the `/output` directory, strict
 ## Technical Approach
 
 ### Core Technology Stack
+
 - **PDF Processing**: `pdfplumber` for character-level extraction with layout, font, size, and positional metadata
 - **Heading Detection Algorithm**:
   - Font size bucket analysis with relative sizing logic
@@ -30,19 +31,23 @@ The system generates corresponding JSON files in the `/output` directory, strict
   - Position-based heuristics targeting top 25% page positioning
 
 ### Title Detection Logic
+
 The system identifies document titles using the following criteria:
+
 - Location: First page of document
 - Position: Upper 25% of page height
 - Alignment: Center-aligned text formatting
 - Priority: First qualifying H1-level candidate
 
 ### Data Processing Features
+
 - OCR noise filtering for headers, footers, timestamps, and page numbering
 - Unicode normalization for multilingual document support
 - Strict JSON schema compliance
 - Batch processing capabilities
 
 ---
+
 ## Project Structure
 
 ```
@@ -81,11 +86,13 @@ The system identifies document titles using the following criteria:
 ### Docker Deployment (Recommended)
 
 **Build the container:**
+
 ```bash
 docker build -t adobe-challenge-1a .
 ```
 
 **Execute processing:**
+
 ```bash
 docker run --rm \
   -v "$(pwd)/input:/app/input" \
@@ -97,11 +104,13 @@ docker run --rm \
 ### Local Development Setup
 
 **Install dependencies:**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 **Dependencies:**
+
 ```
 pdfplumber
 ```
@@ -131,6 +140,7 @@ pdfplumber
 ## Future Extensibility
 
 The modular architecture supports:
+
 - Nested content structure expansion
 - Language-agnostic processing capabilities
 - Persona-based content filtering (Challenge 1B readiness)
@@ -142,5 +152,9 @@ The modular architecture supports:
 **CodeAHA Development Team**
 
 - **Harshit Bhatt**
-- **Arpit Kumar Singh**  
+- **Arpit Kumar Singh**
 - **Armaan Rawat**
+
+---
+
+_Developed for Adobe India Hackathon Challenge - 2025_
