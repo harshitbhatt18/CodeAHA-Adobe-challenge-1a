@@ -43,7 +43,6 @@ The system identifies document titles using the following criteria:
 - Batch processing capabilities
 
 ---
-
 ## Project Structure
 
 ```
